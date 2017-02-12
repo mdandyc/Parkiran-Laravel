@@ -117,6 +117,8 @@ class KendaraanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kendaraan=Kendaraan::find($id);
+        $kendaraan->delete();
+        return redirect('parkiran')->with('message','kendaraan sudah dihapus');
     }
 }
