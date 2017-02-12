@@ -49,7 +49,7 @@ class KendaraanController extends Controller
 
         $kendaraan->save();
 
-        return redirect ('parkiran')->with('message','Blog Sudah Di Updated!');
+        return redirect ('parkiran')->with('message','Create Berhasil!');
     }
 
     /**
@@ -76,7 +76,11 @@ class KendaraanController extends Controller
      */
     public function edit($id)
     {
-        //
+         $kendaraan=Kendaraan::find($id);
+        if (!$kendaraan) {
+            abort(404);
+        }
+        return view('kendaraan.edit')->with('kendaraan',$kendaraan);
     }
 
     /**
@@ -88,7 +92,21 @@ class KendaraanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+        'plat_nomer' => 'required|unique:kendaraan|max:15|min:5',
+        'jam_masuk' => 'required',
+        'jam_keluar' => 'required',
+        ]);
+
+        $kendaraan=Kendaraan::find($id);
+
+        $kendaraan->plat_nomer = $request->plat_nomer;
+        $kendaraan->jam_masuk = $request->jam_masuk;
+        $kendaraan->jam_keluar = $request->jam_keluar;
+
+        $kendaraan->save();
+
+        return redirect ('parkiran')->with('message','Edit Berhasil!');
     }
 
     /**
