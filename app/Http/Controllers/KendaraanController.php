@@ -58,10 +58,15 @@ class KendaraanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($plat_nomer)
     {
-        //
+         $kendaraan=Kendaraan::find($plat_nomer);
+        if (!$kendaraan) {
+            abort(404);
+        }
+        return view('kendaraan.single')->with('kendaraan',$kendaraan);
     }
+    
 
     /**
      * Show the form for editing the specified resource.
