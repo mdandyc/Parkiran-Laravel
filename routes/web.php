@@ -14,4 +14,9 @@
 route::get('/', function(){
 	return redirect()->to('/parkiran');
 });
+Auth::routes();
 Route::resource('parkiran', 'KendaraanController');
+
+
+
+Route::get('/home', 'HomeController@index');
