@@ -10,6 +10,7 @@ Cara Menggunakan nya
 
 1. Buka CMD di Folder Project yang sudah di download
 2. Copy .env.example,lalu Rename menjadi ".env" . setelah itu Setting .env nya,sesuaikan dengan database mu
-2. ketik "php artisan migrate" untuk mengeksport table2
-4. run laravel nya dengan mengetikan "php artisan serve"
-5. jika terjadi error,maka masukan command ini "composer instal" / "composer update"
+3. import parkiran.sql ke phpmyadmin
+4. ketik di command prompt "php artisan key:generate"
+5. run laravel nya dengan mengetikan "php artisan serve"
+6. jika terjadi error,maka masukan command ini "composer instal" / "composer update"
