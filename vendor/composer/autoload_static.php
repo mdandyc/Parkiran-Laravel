@@ -272,6 +272,7 @@ class ComposerStaticInitcd79fef958985242ce62dfb570b9ba3c
     );
 
     public static $classMap = array (
+        'Admins' => __DIR__ . '/../..' . '/database/migrations/2017_02_15_090055_Admins.php',
         'AdminsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminsTableSeeder.php',
         'CreateAdminsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_13_083635_create_admins_table.php',
         'CreateKendaraanTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_12_023335_create_kendaraan_table.php',

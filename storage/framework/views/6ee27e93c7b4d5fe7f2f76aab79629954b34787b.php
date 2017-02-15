@@ -9,15 +9,15 @@
                         <?php echo e(csrf_field()); ?>
 
 
-                        <div class="form-group<?php echo e($errors->has('email') ? ' has-error' : ''); ?>">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group<?php echo e($errors->has('username') ? ' has-error' : ''); ?>">
+                            <label for="username" class="col-md-4 control-label">Username</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>" required autofocus>
+                                <input type="text" class="form-control" name="username" value="<?php echo e(old('username')); ?>" required autofocus>
 
-                                <?php if($errors->has('email')): ?>
+                                <?php if($errors->has('username')): ?>
                                     <span class="help-block">
-                                        <strong><?php echo e($errors->first('email')); ?></strong>
+                                        <strong><?php echo e($errors->first('username')); ?></strong>
                                     </span>
                                 <?php endif; ?>
                             </div>
